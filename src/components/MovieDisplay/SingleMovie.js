@@ -1,42 +1,18 @@
 /* eslint-disable no-console */
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchMovieDetails } from '../../requests';
+// eslint-disable-next-line react/prop-types
 function SingleMovie() {
-  const [movie] = useState({
-    adult: false,
-    backdrop_path: '/rL0XOlPfxrIvH2japmt1cSczt4d.jpg',
-    belongs_to_collection: null,
-    budget: 0,
-    genres: [{ id: 99, name: 'Documentary' }],
-    homepage: '',
-    id: 706614,
-    imdb_id: 'tt12397734',
-    original_language: 'en',
-    original_title: 'NASA & SpaceX: Journey to the Future',
-    overview:
-      'A film crew was granted unprecedented access to NASA and to SpaceX headquarters, giving viewers a rare glimpse inside Launch Control and firsthand accounts from SpaceX founder and chief engineer Elon Musk, Bridentstine and the astronauts flying the mission: Bob Behnken and Doug Hurley.',
-    popularity: 2.47,
-    poster_path: '/oHqKd2jwRgL4BsgOqCv01hekvme.jpg',
-    production_companies: [
-      { id: 98690, logo_path: null, name: 'Storied Media Group', origin_country: 'US' }
-    ],
-    production_countries: [{ iso_3166_1: 'US', name: 'United States of America' }],
-    release_date: '2020-05-25',
-    revenue: 0,
-    runtime: 83,
-    spoken_languages: [
-      { english_name: 'English', iso_639_1: 'en', name: 'English' },
-      { english_name: 'French', iso_639_1: 'fr', name: 'Français' }
-    ],
-    status: 'Released',
-    tagline: '',
-    title: 'NASA & SpaceX: Journey to the Future',
-    video: false,
-    vote_average: 7.2,
-    vote_count: 8
-  });
+  const { id } = useParams();
+  const [movie, setMovie] = useState({});
 
-  console.log(movie);
+  useEffect(() => {
+    fetchMovieDetails(id).then(async (response) => {
+      const movieData = await response.data;
+      setMovie(movieData);
+    });
+  }, [id]);
 
   return (
     <div style={{ color: '#ffffff' }}>
