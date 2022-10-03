@@ -17,7 +17,11 @@ function SingleMovie() {
   return (
     <div style={{ color: '#ffffff' }}>
       <img
-        src={`${process.env.REACT_APP_MOVIE_IMG_BASE_URL}${movie.poster_path}`}
+        src={
+          movie.poster_path
+            ? `${process.env.REACT_APP_MOVIE_IMG_BASE_URL}${movie.poster_path}`
+            : `${process.env.REACT_APP_DEFAULT_MOVIE_IMG}`
+        }
         alt="movie_poster"
       />
       <h2>Title: {movie.title}</h2>
@@ -27,7 +31,8 @@ function SingleMovie() {
       <h2>Total Votes: {movie.vote_count}</h2>
       <h2>Status: {movie.status}</h2>
       <h2>
-        IMDB Link: <a href={`https://www.imdb.com/title/${movie.imdb_id}`}>{movie.imdb_id}</a>
+        IMDB Link:{' '}
+        <a href={`${process.env.REACT_APP_IMDB_MOVIE_BASE_URL}${movie.imdb_id}`}>{movie.imdb_id}</a>
       </h2>
       <h2>Budget: {movie.budget ? movie.budget : 'Unknown budget costs'}</h2>
       <h2>Production Countries:</h2>

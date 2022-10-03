@@ -26,7 +26,7 @@ function MovieDisplay() {
               src={
                 poster_path
                   ? `${process.env.REACT_APP_MOVIE_IMG_BASE_URL}${poster_path}`
-                  : 'https://nasa-movies.netlify.app/image/gallery.png'
+                  : process.env.REACT_APP_DEFAULT_MOVIE_IMG
               }
               alt="poster"
               className="movie-img"
