@@ -5,11 +5,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import ErrorPage from './components/ErrorPage';
+import SingleMovie from './components/MovieDisplay/SingleMovie';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: '/movies/:id',
+    element: <SingleMovie />,
     errorElement: <ErrorPage />
   }
 ]);

@@ -13,3 +13,10 @@ export function fetchMovieInfo() {
     method: 'get'
   });
 }
+
+export function fetchMovieDetails(movieId) {
+  return request({
+    url: `https://api.themoviedb.org/3/movie/${movieId}?api_key=48b43c71c226d58239efb833d05ab17c`,
+    method: 'get'
+  });
+}

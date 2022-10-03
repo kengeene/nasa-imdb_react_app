@@ -347,7 +347,6 @@ function MovieDisplay() {
       vote_count: 0
     }
   ]);
-  const baseImgUrl = 'https://image.tmdb.org/t/p/original//';
 
   useEffect(() => {
     const getMovieInfo = async () => {
@@ -366,7 +365,7 @@ function MovieDisplay() {
             <img
               src={
                 poster_path
-                  ? `https://image.tmdb.org/t/p/original//${poster_path}`
+                  ? `${process.env.REACT_APP_MOVIE_IMG_BASE_URL}${poster_path}`
                   : 'https://nasa-movies.netlify.app/image/gallery.png'
               }
               alt="poster"
