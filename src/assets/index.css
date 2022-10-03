@@ -22,3 +22,86 @@ body {
   display: block;
   max-width: 100%;
 }
+
+.movie{
+  background-color: white;
+  margin: 0px 20px 20px 0px;
+}
+
+.movie-img{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  min-height: 400px;
+  width: 100%;
+  margin: 0px 0px 20px
+}
+
+.movie h1{
+      font-size: 22px;
+    margin: 0px 0px 20px;
+    text-align: center;
+    color: rgb(255, 183, 3);
+}
+
+.movie h4{
+  margin: 0px 0px 10px;
+}
+
+.movie-link{
+  text-decoration: none;
+  color: black;
+  text-align: left;
+}
+
+em{
+  color: rgb(255, 183, 3);
+  font-style: normal;
+}
+
+.movie-description-title{
+  text-align: left;
+  margin: 0px 0px 10px;
+}
+
+.movie-link:hover{
+  text-decoration: underline;
+  color: rgb(255, 183, 3);
+}
+
+.grid-container {
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+  column-gap: 20px;
+  padding: 20px;
+  display: grid;
+}
+
+.grid-item {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  flex-basis: 100%;
+  margin: 20px 0px 0px;
+}
+
+
+@media (min-width: 1200px){
+.grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}}
+@media (min-width: 1024px){
+.grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}}
+@media (min-width: 768px){
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .grid-item {
+    margin: 0px 20px 20px 0px;
+  }
+}

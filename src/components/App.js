@@ -9,7 +9,6 @@ import MovieDisplay from './MovieDisplay';
 function App() {
   const [nasaInfo, setNasaInfo] = useState({});
   const [dateString, setDateString] = useState('');
-  const [movies, setMovies] = useState('');
   const convertDateFormat = (providedDate) => {
     const date = new Date(providedDate);
     return date.toDateString();
@@ -33,7 +32,7 @@ function App() {
         </h1>
         <img src={nasaInfo.hdurl} alt="background" className="background-image" />
       </div>
-      <MovieDisplay movies={movies} setMovies={setMovies} />
+      <MovieDisplay />
     </div>
   );
 }
