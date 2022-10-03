@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './assets/index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './components/App';
-import reportWebVitals from './reportWebVitals';
+import Homepage from './components/Homepage';
+import reportWebVitals from './utils/reportWebVitals';
 import ErrorPage from './components/ErrorPage';
-import SingleMovie from './components/MovieDisplay/SingleMovie';
+import SingleMovie from './components/SingleMovie';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Homepage />,
     errorElement: <ErrorPage />
   },
   {

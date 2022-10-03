@@ -1,8 +1,7 @@
-/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchMovieDetails } from '../../requests';
-// eslint-disable-next-line react/prop-types
+import { fetchMovieDetails } from '../requests';
+
 function SingleMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState({});

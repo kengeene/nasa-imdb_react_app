@@ -1,12 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
-/* eslint-disable camelcase */
 import { useEffect, useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import { fetchMovieInfo } from '../../requests';
+import { Link } from 'react-router-dom';
+import { fetchMovieInfo } from '../requests';
 
-/* eslint-disable react/prop-types */
-function MovieDisplay() {
+function MoviesDisplay() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -47,4 +43,4 @@ function MovieDisplay() {
   );
 }
 
-export default MovieDisplay;
+export default MoviesDisplay;

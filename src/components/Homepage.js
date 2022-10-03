@@ -1,12 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
-/* eslint-disable no-undef */
 import { useEffect, useState } from 'react';
 import '../assets/App.css';
 import { fetchNasaInfo } from '../requests/index';
-import MovieDisplay from './MovieDisplay';
+import MoviesDisplay from './MoviesDisplay';
 
-function App() {
+function Homepage() {
   const [nasaInfo, setNasaInfo] = useState({});
   const [dateString, setDateString] = useState('');
   const convertDateFormat = (providedDate) => {
@@ -32,9 +29,9 @@ function App() {
         </h1>
         <img src={nasaInfo.hdurl} alt="background" className="background-image" />
       </div>
-      <MovieDisplay />
+      <MoviesDisplay />
     </div>
   );
 }
 
-export default App;
+export default Homepage;
