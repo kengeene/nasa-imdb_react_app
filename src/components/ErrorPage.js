@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// This page will display when an error occurs
 import { useRouteError } from 'react-router-dom';
 
 export default function ErrorPage() {

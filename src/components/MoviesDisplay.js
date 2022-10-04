@@ -6,6 +6,7 @@ function MoviesDisplay() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
+    // This function will be used to fetch the movies
     const getMovieInfo = async () => {
       const { data } = await fetchMovieInfo();
       setMovies(data.results);
@@ -18,6 +19,7 @@ function MoviesDisplay() {
       {movies.map(({ original_title, overview, release_date, id, popularity, poster_path }) => (
         <div className="grid-item movie" key={id}>
           <Link to={`movies/${id}`} state={id} className="movie-link">
+            {/* Will default to default image if an image/poster is not found while querying the API */}
             <img
               src={
                 poster_path

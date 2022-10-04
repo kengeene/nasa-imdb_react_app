@@ -1,3 +1,4 @@
+// This file will intercept and handle all Axios requests triggered from the requests folder
 import axios from 'axios';
 
 // create an axios instance
