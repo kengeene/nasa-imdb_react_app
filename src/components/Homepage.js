@@ -2,16 +2,14 @@ import { useEffect, useState } from 'react';
 import '../assets/App.css';
 import { fetchNasaInfo } from '../requests/index';
 import MoviesDisplay from './MoviesDisplay';
+import { convertDateFormat } from '../utils/date';
 
 function Homepage() {
   const [nasaInfo, setNasaInfo] = useState({});
   const [dateString, setDateString] = useState('');
-  const convertDateFormat = (providedDate) => {
-    const date = new Date(providedDate);
-    return date.toDateString();
-  };
 
   useEffect(() => {
+    // This function fetches fetches info needed to render the Menubar date and the background image displayed onthe homepage
     const getNasaInfo = async () => {
       const { data } = await fetchNasaInfo();
       setNasaInfo(data);
@@ -29,6 +27,7 @@ function Homepage() {
         </h1>
         <img src={nasaInfo.hdurl} alt="background" className="background-image" />
       </div>
+      {/* Grid used to display the movies fetched by the API */}
       <MoviesDisplay />
     </div>
   );
