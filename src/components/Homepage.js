@@ -25,7 +25,11 @@ function Homepage() {
           <span>NASA:</span> Picture of the Day
           <div>{dateString}</div>
         </h1>
-        <img src={nasaInfo.hdurl} alt="background" className="background-image" />
+        {nasaInfo.media_type === 'video' ? (
+          <iframe width="420" height="315" src={nasaInfo.url} title="NASA video" />
+        ) : (
+          <img src={nasaInfo.hdurl} alt="background" className="background-image" />
+        )}
       </div>
       {/* Grid used to display the movies fetched by the API */}
       <MoviesDisplay />
