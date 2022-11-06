@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../assets/App.css';
+import '../styles/App.css';
 import { fetchNasaInfo } from '../requests/index';
 import MoviesDisplay from './MoviesDisplay';
 import { convertDateFormat } from '../utils/date';
